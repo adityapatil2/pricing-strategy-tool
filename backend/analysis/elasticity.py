@@ -1,5 +1,5 @@
 import numpy as np
-import pandas as pd
+
 
 def calculate_elasticity(df):
     """
@@ -7,43 +7,35 @@ def calculate_elasticity(df):
     Formula: % change in quantity / % change in price
     """
     try:
-        # Sort by price
         df = df.sort_values('price')
 
-        # Calculate percentage changes
         price_change = df['price'].pct_change()
         quantity_change = df['units_sold'].pct_change()
 
-        # Calculate elasticity
         elasticity = quantity_change / price_change
-
-        # Remove infinite and NaN values
         elasticity = elasticity.replace([np.inf, -np.inf], np.nan).dropna()
 
-        # Average elasticity
         avg_elasticity = round(elasticity.mean(), 2)
 
-        # Interpret elasticity
         if avg_elasticity < -1:
-            interpretation = "Price Sensitive — Lowering price will increase revenue"
+            interpretation = 'Price sensitive - lowering price is likely to increase revenue'
         elif avg_elasticity == -1:
-            interpretation = "Unit Elastic — Price change has no effect on revenue"
+            interpretation = 'Unit elastic - price changes are likely to keep revenue flat'
         else:
-            interpretation = "Price Insensitive — You can raise price without losing many customers"
+            interpretation = 'Price insensitive - there may be room to raise price with limited volume loss'
 
-        # Build chart data
         chart_data = []
         for _, row in df.iterrows():
             chart_data.append({
-                "price": row['price'],
-                "units_sold": row['units_sold']
+                'price': row['price'],
+                'units_sold': row['units_sold'],
             })
 
         return {
-            "elasticity": avg_elasticity,
-            "interpretation": interpretation,
-            "chart_data": chart_data
+            'elasticity': avg_elasticity,
+            'interpretation': interpretation,
+            'chart_data': chart_data,
         }
 
     except Exception as e:
-        return {"error": str(e)}
+        return {'error': str(e)}
