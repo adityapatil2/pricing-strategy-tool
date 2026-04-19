@@ -13,7 +13,7 @@ A full-stack web application that helps e-commerce businesses make data-driven p
 ## 🚀 Live Demo
 
 - **Frontend:** [https://pricing-strategy-tool.vercel.app](https://pricing-strategy-tool.vercel.app)
-- **Backend API:** [https://pricing-strategy-tool.onrender.com](https://pricing-strategy-tool.onrender.com)
+- **Backend API:** [https://pricing-strategy-tool.onrender.com](https://pricing-strategy-tool-api.onrender.com/)
 
 ---
 
