@@ -252,7 +252,7 @@ Extra columns are automatically ignored.
 
 **Aditya Patil**
 - GitHub: [@adityapatil2](https://github.com/adityapatil2)
-- LinkedIn: [Aditya Patil](https://linkedin.com/in/adityapatil)
+- LinkedIn: [Aditya Patil](https://www.linkedin.com/in/adityasanjivpatil/)
 
 ---
 
